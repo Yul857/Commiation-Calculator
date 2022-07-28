@@ -1,11 +1,11 @@
 import React from 'react';
 
-const LaborCoulmn = () => {
+const LaborColumn = () => {
     return (
         <div>
-            Hello
+            
         </div>
     );
 }
 
-export default LaborCoulmn;
+export default LaborColumn;
