@@ -3,6 +3,7 @@ import "./App.css";
 import LaborCoulmn from "./Components/LaborColumn";
 import AmsFooter from "./Components/AmsFooter";
 import AmsHeader from "./Components/AmsHeader";
+import CostForm from "./Components/CostForm";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       </div>
 
       <div className="">
-        <LaborCoulmn />
+        <CostForm />
       </div>
       <div> 
         <AmsFooter />
