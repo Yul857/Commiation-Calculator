@@ -28,17 +28,17 @@ export default function CostForm() {
             <div className="space-y-6 sm:space-y-5">
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  htmlFor="first-name"
+                  htmlFor="labor"
                   className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Labor
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    type="text"
-                    name="first-name"
-                    id="first-name"
-                    autoComplete="given-name"
+                    placeholder=" Please enter how many days"
+                    type="number"
+                    name="labor"
+                    id="labor"
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -46,17 +46,17 @@ export default function CostForm() {
 
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  htmlFor="last-name"
+                  htmlFor="air-ticket"
                   className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Air ticket
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    type="text"
-                    name="last-name"
-                    id="last-name"
-                    autoComplete="family-name"
+                  placeholder=" Please enter the price of the Air ticket"
+                    type="number"
+                    name="air-ticket"
+                    id="air-ticket"
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -64,17 +64,17 @@ export default function CostForm() {
 
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  htmlFor="email"
+                  htmlFor="hotel"
                   className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
-                  Hotel
+                    Hotel
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
+                  placeholder=" Please enter the price of the hotel"
+                    id="hotel"
+                    name="hotel"
+                    type="number"
                     className="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -82,38 +82,35 @@ export default function CostForm() {
 
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  htmlFor="country"
+                  htmlFor="rent-car"
                   className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Rent Car
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
-                  <select
-                    id="country"
-                    name="country"
-                    autoComplete="country-name"
-                    className="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
-                  >
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>Mexico</option>
-                  </select>
+                  <input
+                  placeholder=" Please enter the price of the hotel"
+                    id="rent-car"
+                    name="rent-car"
+                    type="number"
+                    className="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
+                  />
                 </div>
               </div>
 
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  htmlFor="street-address"
+                  htmlFor="meal"
                   className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Meal
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    type="text"
-                    name="street-address"
-                    id="street-address"
-                    autoComplete="street-address"
+                    placeholder=" Please enter how many people"
+                    type="number"
+                    name="meal"
+                    id="meal"
                     className="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -121,17 +118,17 @@ export default function CostForm() {
 
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  htmlFor="city"
+                  htmlFor="gas"
                   className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Gas
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    type="text"
-                    name="city"
-                    id="city"
-                    autoComplete="address-level2"
+                  placeholder=" Please enter the gas price"
+                    type="number"
+                    name="gas"
+                    id="gas"
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -139,17 +136,17 @@ export default function CostForm() {
 
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  htmlFor="region"
+                  htmlFor="milage"
                   className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Milage
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    type="text"
-                    name="region"
-                    id="region"
-                    autoComplete="address-level1"
+                  placeholder=" Please enter the Milage of the trip"
+                    type="number"
+                    name="milage"
+                    id="milage"
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -157,17 +154,17 @@ export default function CostForm() {
 
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  htmlFor="postal-code"
+                  htmlFor="extra"
                   className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Extra
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    type="text"
-                    name="postal-code"
-                    id="postal-code"
-                    autoComplete="postal-code"
+                    placeholder="Please enter the entra cost"
+                    type="number"
+                    name="extra"
+                    id="extra"
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
