@@ -1,27 +1,18 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 export default function CostForm() {
+    let labor = 0;
+
+  const handleChange = (event) => {
+      labor = event.target.valueAsNumber
+    console.log(labor);
+  };
+
   return (
-    <div className="m-4 p-4 bg-red-400">
+    <div className="m-40 p-4">
       <form className="space-y-8 divide-y divide-gray-200">
         <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
           <div className="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
             <div>
-              <h3 className="text-lg leading-6 font-medium text-gray-900">
+              <h3 className="text-xl leading-6 font-medium text-gray-900 text-center ">
                 Cost Estimation
               </h3>
             </div>
@@ -35,6 +26,7 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
+                    onChange={handleChange}
                     placeholder=" Please enter how many days"
                     type="number"
                     name="labor"
@@ -53,7 +45,7 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  placeholder=" Please enter the price of the Air ticket"
+                    placeholder=" Please enter the price of the Air ticket"
                     type="number"
                     name="air-ticket"
                     id="air-ticket"
@@ -67,11 +59,11 @@ export default function CostForm() {
                   htmlFor="hotel"
                   className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
-                    Hotel
+                  Hotel
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  placeholder=" Please enter the price of the hotel"
+                    placeholder=" Please enter the price of the hotel"
                     id="hotel"
                     name="hotel"
                     type="number"
@@ -89,7 +81,7 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  placeholder=" Please enter the price of the hotel"
+                    placeholder=" Please enter the price of the hotel"
                     id="rent-car"
                     name="rent-car"
                     type="number"
@@ -125,7 +117,7 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  placeholder=" Please enter the gas price"
+                    placeholder=" Please enter the gas price"
                     type="number"
                     name="gas"
                     id="gas"
@@ -143,7 +135,7 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  placeholder=" Please enter the Milage of the trip"
+                    placeholder=" Please enter the Milage of the trip"
                     type="number"
                     name="milage"
                     id="milage"
