@@ -1,7 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux'
+import { incrementByAmount } from "../features/counter/counterSlice";
 
 import Select from "react-select";
+
 const laborOptions = [
   { value: "350", label: "Kevin" },
   { value: "450", label: "Rob" },
@@ -10,8 +13,8 @@ const laborOptions = [
 
 const TagsMultiSelect = () => {
   const [selectedLabor, setselectedLabor] = useState("");
-  const [totalLabor, setTotalLabor] = useState(0)
   let total = 0
+  const dispatch = useDispatch()
   const handleChange = (e) => {
     if (e.length !== 0) {
       setselectedLabor(e);
@@ -23,7 +26,8 @@ const TagsMultiSelect = () => {
         for (let labors in selectedLabor){
             total += parseInt(selectedLabor[labors].value)
         }
-        setTotalLabor(total)
+        console.log(total)
+        dispatch(incrementByAmount(total))
     }
   }, [selectedLabor]);
   return (
