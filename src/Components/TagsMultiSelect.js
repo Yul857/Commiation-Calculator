@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import {  useDispatch } from 'react-redux'
 import { incrementByAmount } from "../features/counter/counterSlice";
 
 import Select from "react-select";

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import TagsMultiSelect from "./TagsMultiSelect";
+import { useSelector} from 'react-redux'
 
 export default function CostForm() {
-  const [labor, setlabor] = useState(0);
+  const [laborDay, setlaborDay] = useState(0);
   const [airTicket, setAirTicket] = useState(0);
+  const [airPeople, setAirPeople] = useState(0)
   const [hotel, setHotel] = useState(0);
   const [car, setCar] = useState(0);
   const [meal, setMeal] = useState(0);
@@ -11,13 +13,16 @@ export default function CostForm() {
   const [milage, setMilage] = useState(0);
   const [extra, setExtra] = useState(0);
 
+  const laborTotal = useSelector((state)=> state.counter.value)
+  let estimatedTotal = laborTotal*laborDay
+
+  
+
   useEffect(() => {
     console.log(
-      `the total price of the cost is ${
-        labor + airTicket + hotel + car + meal + gas + milage + extra
-      }`
+      `the total price of the cost is ${laborTotal*laborDay}`
     );
-  }, [extra]);
+  }, [laborDay]);
 
   return (
     <div className="m-40 p-4">
@@ -44,7 +49,7 @@ export default function CostForm() {
                   <div>
                   <input
                     onChange={(event) => {
-                      setlabor(event.target.valueAsNumber);
+                      setlaborDay(event.target.valueAsNumber);
                     }}
                     placeholder=" Please enter how many days"
                     type="number"
@@ -63,7 +68,8 @@ export default function CostForm() {
                 >
                   Air ticket
                 </label>
-                <div className="mt-1 sm:mt-0 sm:col-span-2">
+                <div className="mt-1 sm:mt-0 flex bg-green-200 justify-between">
+                  <div className="w-60 ">
                   <input
                     onChange={(event) => {
                       setAirTicket(event.target.valueAsNumber);
@@ -74,6 +80,20 @@ export default function CostForm() {
                     id="air-ticket"
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
+                  </div>
+                  <div className="w-60">
+                  <input
+                    onChange={(event) => {
+                      setAirTicket(event.target.valueAsNumber);
+                    }}
+                    placeholder=" Please enter the price of the Air ticket"
+                    type="number"
+                    name="air-ticket"
+                    id="air-ticket"
+                    className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
+                  />
+                  </div>
+                  
                 </div>
               </div>
 
@@ -206,6 +226,9 @@ export default function CostForm() {
           </div>
         </div>
       </form>
+      <div>
+        <h1>The Total is ${estimatedTotal}</h1>
+      </div>
     </div>
   );
 }
