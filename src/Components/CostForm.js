@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import TagsMultiSelect from "./TagsMultiSelect";
 
 export default function CostForm() {
-    const [labor, setlabor] = useState(0)
-    const [airTicket, setAirTicket] = useState(0)
-    const [hotel, setHotel] = useState(0)
-    const [car, setCar] = useState(0)
-    const [meal, setMeal] = useState(0)
-    const [gas, setGas] = useState(0)
-    const [milage, setMilage] = useState(0)
-    const [extra, setExtra] = useState(0)
+  const [labor, setlabor] = useState(0);
+  const [airTicket, setAirTicket] = useState(0);
+  const [hotel, setHotel] = useState(0);
+  const [car, setCar] = useState(0);
+  const [meal, setMeal] = useState(0);
+  const [gas, setGas] = useState(0);
+  const [milage, setMilage] = useState(0);
+  const [extra, setExtra] = useState(0);
 
-    useEffect(() => {
-      console.log(`the total price of the cost is ${labor+airTicket+hotel+car+meal+gas+milage+extra}`)
-    }, [extra]);
+  useEffect(() => {
+    console.log(
+      `the total price of the cost is ${
+        labor + airTicket + hotel + car + meal + gas + milage + extra
+      }`
+    );
+  }, [extra]);
 
   return (
     <div className="m-40 p-4">
@@ -32,15 +37,22 @@ export default function CostForm() {
                 >
                   Labor
                 </label>
-                <div className="mt-1 sm:mt-0 sm:col-span-2">
+                <div className="mt-1 sm:mt-0 sm:col-span-2 flex">
+                  <div className="m-2">
+                    <TagsMultiSelect />
+                  </div>
+                  <div>
                   <input
-                    onChange={(event)=>{setlabor(event.target.valueAsNumber)}}
+                    onChange={(event) => {
+                      setlabor(event.target.valueAsNumber);
+                    }}
                     placeholder=" Please enter how many days"
                     type="number"
                     name="labor"
                     id="labor"
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
+                  </div>         
                 </div>
               </div>
 
@@ -53,7 +65,9 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  onChange={(event)=>{setAirTicket(event.target.valueAsNumber)}}
+                    onChange={(event) => {
+                      setAirTicket(event.target.valueAsNumber);
+                    }}
                     placeholder=" Please enter the price of the Air ticket"
                     type="number"
                     name="air-ticket"
@@ -72,7 +86,9 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  onChange={(event)=>{setHotel(event.target.valueAsNumber)}}
+                    onChange={(event) => {
+                      setHotel(event.target.valueAsNumber);
+                    }}
                     placeholder=" Please enter the price of the hotel"
                     id="hotel"
                     name="hotel"
@@ -91,7 +107,9 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  onChange={(event)=> {setCar(event.target.valueAsNumber)}}
+                    onChange={(event) => {
+                      setCar(event.target.valueAsNumber);
+                    }}
                     placeholder=" Please enter the price of the hotel"
                     id="rent-car"
                     name="rent-car"
@@ -110,7 +128,9 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  onChange={(event)=> {setMeal(event.target.valueAsNumber)}}
+                    onChange={(event) => {
+                      setMeal(event.target.valueAsNumber);
+                    }}
                     placeholder=" Please enter how many people"
                     type="number"
                     name="meal"
@@ -129,7 +149,9 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  onChange={(event)=> {setGas(event.target.valueAsNumber)}}
+                    onChange={(event) => {
+                      setGas(event.target.valueAsNumber);
+                    }}
                     placeholder=" Please enter the gas price"
                     type="number"
                     name="gas"
@@ -148,7 +170,9 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  onChange={(event)=> {setMilage(event.target.valueAsNumber)}}
+                    onChange={(event) => {
+                      setMilage(event.target.valueAsNumber);
+                    }}
                     placeholder=" Please enter the Milage of the trip"
                     type="number"
                     name="milage"
@@ -167,7 +191,9 @@ export default function CostForm() {
                 </label>
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                  onChange={(event)=> {setExtra(event.target.valueAsNumber)}}
+                    onChange={(event) => {
+                      setExtra(event.target.valueAsNumber);
+                    }}
                     placeholder="Please enter the entra cost"
                     type="number"
                     name="extra"
