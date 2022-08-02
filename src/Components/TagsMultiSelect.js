@@ -8,7 +8,7 @@ import Select from "react-select";
 const laborOptions = [
   { value: "350", label: "Kevin" },
   { value: "450", label: "Rob" },
-  { value: "550", label: "Esprenza" },
+  { value: "550", label: "Esperanza" },
 ];
 
 const TagsMultiSelect = () => {
@@ -22,7 +22,7 @@ const TagsMultiSelect = () => {
   };
 
   useEffect(() => {
-    if (selectedLabor.lenght!==0){
+    if (selectedLabor.length!==0){
         for (let labors in selectedLabor){
             total += parseInt(selectedLabor[labors].value)
         }
