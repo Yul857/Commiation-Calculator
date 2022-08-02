@@ -7,7 +7,7 @@ import CostForm from "./Components/CostForm";
 
 function App() {
   return (
-    <div className="bg-red-50">
+    <div className="">
       <div className="">
         <AmsHeader />
       </div>
