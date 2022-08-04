@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import TagsMultiSelect from "./TagsMultiSelect";
+import TagsMultiSelect from "./dropDownmenu/EmployeeSelect";
 import { useSelector } from "react-redux";
+import MealSelect from "./dropDownmenu/MealSelect";
 
 export default function CostForm() {
   const [laborDay, setlaborDay] = useState(0);
@@ -11,7 +12,6 @@ export default function CostForm() {
   const [roomQuantity, setRoomQuantity] = useState(0);
   const [carPrice, setCarPrice] = useState(0);
   const [carDay, setCarDay] = useState(0);
-  const [mealNumber, setMealNumber] = useState(0);
   const [mealpeople, setMealPeople] = useState(0);
   const [mealDays, setMealDays] = useState(0);
   const [gasPrice, setGasPrice] = useState(0);
@@ -20,6 +20,7 @@ export default function CostForm() {
   const [extra, setExtra] = useState(0);
 
   const laborTotal = useSelector((state) => state.counter.value);
+  const mealNumber = useSelector((state)  => state.meal.value)
   let estimatedTotal =
     laborTotal * laborDay +
     airPrice * airPeople +
@@ -213,8 +214,8 @@ export default function CostForm() {
                     Meal
                   </label>
                   <div className="mt-1 sm:mt-0 lg:flex justify-between lg:mr-20">
-                    <div>
-                      <input
+                    <div className="pt-2 pl-2">
+                      {/* <input
                         onChange={(event) => {
                           setMealNumber(event.target.valueAsNumber);
                         }}
@@ -224,7 +225,8 @@ export default function CostForm() {
                         id="mealNumber"
                         className="w-66 lg:w-42 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
-                      />
+                      /> */}
+                      <MealSelect />
                     </div>
                     <div>
                       <input

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import {  useDispatch } from 'react-redux'
-import { incrementByAmount } from "../features/counter/counterSlice";
+import { incrementByAmount } from "../../features/counter/counterSlice";
 
 import Select from "react-select";
 
@@ -20,7 +20,7 @@ const customStyles = {
   })
 };
 
-const TagsMultiSelect = () => {
+const EmployeeSelect = () => {
   const [selectedLabor, setselectedLabor] = useState("");
   let total = 0
   const dispatch = useDispatch()
@@ -53,4 +53,4 @@ const TagsMultiSelect = () => {
     
   );
 };
-export default TagsMultiSelect;
+export default EmployeeSelect;
