@@ -36,29 +36,29 @@ export default function CostForm() {
 
   return (
     <div className="flex justify-center">
-      <div className="m-4 p-4 bg-gray-50 content-center w-3/5 shadow-lg">
+      <div className="m-4 p-4 bg-gray-50 content-center lg:w-3/5 shadow-lg">
         <form className="space-y-8 divide-y divide-gray-200">
           <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
             <div className="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
               <div>
-                <h3 className="text-3xl leading-6 font-medium text-gray-900 px-4 mx-4">
+                <h3 className="text-2xl lg:text-3xl lg:text-left text-center leading-6 font-medium text-gray-900 px-4 mx-4">
                   Cost Estimation
                 </h3>
               </div>
               <div className="space-y-6 sm:space-y-5 px-4 mx-4 ">
-                <div className="justify-between items-center xs:flex">
+                <div className="justify-between items-center lg:flex">
                   <div>
                     <label
                       htmlFor="laborDay"
-                      className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 "
+                      className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-center"
                     >
                       Labor
                     </label>
                   </div>
 
-                  <div className="mt-1 flex md:mr-20">
+                  <div className="mt-1 lg:flex lg:mr-20">
                     <div className="m-2">
-                      <TagsMultiSelect className="w-60"/>
+                      <TagsMultiSelect />
                     </div>
                     <div>
                       <input
@@ -69,24 +69,24 @@ export default function CostForm() {
                         type="number"
                         name="laborDay"
                         id="laborDay"
-                        className="w-60 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-60 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center">
+                <div className="lg:flex justify-between items-center">
                   <div>
                     <label
                       htmlFor="air-Price"
-                      className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                      className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-center"
                     >
                       Air ticket
                     </label>
                   </div>
 
-                  <div className="mt-1 sm:mt-0 flex justify-between md:mr-20">
+                  <div className="mt-1 sm:mt-0 lg:flex justify-between lg:mr-20">
                     <div>
                       <input
                         onChange={(event) => {
@@ -109,23 +109,23 @@ export default function CostForm() {
                         type="number"
                         name="air-People"
                         id="air-People"
-                        className="w-60 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-60 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center">
+                <div className="lg:flex justify-between items-center">
                   <div>
                     <label
                       htmlFor="hotelPrice"
-                      className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                      className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-center"
                     >
                       Hotel
                     </label>
                   </div>
-                  <div className="mt-1 sm:mt-0 flex justify-between md:mr-20">
+                  <div className="mt-1 sm:mt-0 lg:flex justify-between lg:mr-20">
                     <div>
                       <input
                         onChange={(event) => {
@@ -135,7 +135,7 @@ export default function CostForm() {
                         type="number"
                         name="hotelPrice"
                         id="hotelPrice"
-                        className="w-42 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-42 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
@@ -148,7 +148,7 @@ export default function CostForm() {
                         type="number"
                         name="hotelNights"
                         id="hotelNights"
-                        className="w-40 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-40 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
@@ -161,21 +161,21 @@ export default function CostForm() {
                         type="number"
                         name="roomQuantity"
                         id="RoomQuantity"
-                        className="w-40 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-40 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center">
+                <div className="lg:flex justify-between items-center">
                   <label
                     htmlFor="rent-car"
-                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-center"
                   >
                     Rent Car
                   </label>
-                  <div className="mt-1 sm:mt-0 flex justify-between md:mr-20">
+                  <div className="mt-1 sm:mt-0 lg:flex justify-between lg:mr-20">
                     <div>
                       <input
                         onChange={(event) => {
@@ -198,21 +198,21 @@ export default function CostForm() {
                         type="number"
                         name="carDay"
                         id="carDay"
-                        className="w-60 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-60 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center">
+                <div className="lg:flex justify-between items-center">
                   <label
                     htmlFor="meal"
-                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-center"
                   >
                     Meal
                   </label>
-                  <div className="mt-1 sm:mt-0 flex justify-between md:mr-20">
+                  <div className="mt-1 sm:mt-0 lg:flex justify-between lg:mr-20">
                     <div>
                       <input
                         onChange={(event) => {
@@ -222,7 +222,7 @@ export default function CostForm() {
                         type="number"
                         name="mealNumber"
                         id="mealNumber"
-                        className="w-42 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-42 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
@@ -235,7 +235,7 @@ export default function CostForm() {
                         type="number"
                         name="mealPeople"
                         id="mealPeople"
-                        className="w-40 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-40 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
@@ -248,21 +248,21 @@ export default function CostForm() {
                         type="number"
                         name="mealDays"
                         id="mealDays"
-                        className="w-40 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-40 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center">
+                <div className="lg:flex justify-between items-center">
                   <label
                     htmlFor="gas"
-                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-center"
                   >
                     Gas
                   </label>
-                  <div className="mt-1 sm:mt-0 flex justify-between md:mr-20">
+                  <div className="mt-1 sm:mt-0 lg:flex justify-between md:mr-20">
                     <div>
                       <input
                         onChange={(event) => {
@@ -285,21 +285,21 @@ export default function CostForm() {
                         type="number"
                         name="gasWeeks"
                         id="gasWeeks"
-                        className="w-60 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-60 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center">
+                <div className="lg:flex justify-between items-center">
                   <label
                     htmlFor="milage"
-                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-center"
                   >
                     Milage
                   </label>
-                  <div className="mt-1 sm:mt-0 flex justify-between md:mr-20">
+                  <div className="mt-1 sm:mt-0 lg:flex justify-between md:mr-20">
                     <div>
                       <input
                         onChange={(event) => {
@@ -309,21 +309,21 @@ export default function CostForm() {
                         type="number"
                         name="milage"
                         id="milage"
-                        className="w-120 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-120 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center">
+                <div className="lg:flex justify-between items-center">
                   <label
                     htmlFor="extra"
-                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-center"
                   >
                     Extra
                   </label>
-                  <div className="mt-1 sm:mt-0 flex justify-between md:mr-20">
+                  <div className="mt-1 sm:mt-0 lg:flex justify-between md:mr-20">
                     <div>
                       <input
                         onChange={(event) => {
@@ -333,7 +333,7 @@ export default function CostForm() {
                         type="number"
                         name="extra"
                         id="extra"
-                        className="w-120 h-10 rounded-md m-2 border-2 border-gray-300"
+                        className="w-66 lg:w-120 h-10 rounded-md m-2 border-2 border-gray-300"
                         style={{textAlign: "center"}}
                       />
                     </div>
