@@ -1,28 +1,27 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import {  useDispatch } from 'react-redux'
-import { setMeal } from "../../features/counter/mealSlice";
+import { setMilage } from "../../features/counter/MilageSlice";
 
 import Select from "react-select";
 
-const mealOptions = [
-  { value: "1", label: "One" },
-  { value: "2", label: "Two" },
-  { value: "3", label: "Three" },
+const countryOptions = [
+  { value: "0.15", label: "US" },
+  { value: "0.1", label: "Mexico" },
 ];
 
 const customStyles = {
   container: provided => ({
     ...provided,
-    width: 180
+    width: 266
   })
 };
 
-const MealSelect = () => {
+const CountrySelect = () => {
   const dispatch = useDispatch()
   const handleChange = (e) => {
     if (e.length !== 0) {
-      dispatch(setMeal(e.value))
+      dispatch(setMilage(e.value))
       console.log(e.value)
     }
   };
@@ -30,12 +29,12 @@ const MealSelect = () => {
   return (
     <Select
       onChange={handleChange}
-      options={mealOptions}
+      options={countryOptions}
       classNamePrefix="select"
-      placeholder="Meals per day"
+      placeholder="Select Country"
       styles={customStyles}
     />
     
   );
 };
-export default MealSelect;
+export default CountrySelect;

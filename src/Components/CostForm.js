@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TagsMultiSelect from "./dropDownmenu/EmployeeSelect";
 import { useSelector } from "react-redux";
 import MealSelect from "./dropDownmenu/MealSelect";
+import CountrySelect from "./dropDownmenu/CountrySelect";
 
 export default function CostForm() {
   const [laborDay, setlaborDay] = useState(0);
@@ -20,7 +21,8 @@ export default function CostForm() {
   const [extra, setExtra] = useState(0);
 
   const laborTotal = useSelector((state) => state.counter.value);
-  const mealNumber = useSelector((state)  => state.meal.value)
+  const mealNumber = useSelector((state) => state.meal.value);
+  const milageRate = useSelector((state) => state.milage.value)
   let estimatedTotal =
     laborTotal * laborDay +
     airPrice * airPeople +
@@ -28,7 +30,7 @@ export default function CostForm() {
     carPrice * carDay +
     60 * mealNumber * mealpeople * mealDays +
     gasPrice * gasWeeks +
-    milage +
+    milageRate* milage +
     extra;
 
   useEffect(() => {
@@ -71,7 +73,7 @@ export default function CostForm() {
                         name="laborDay"
                         id="laborDay"
                         className="w-66 lg:w-60 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                   </div>
@@ -98,7 +100,7 @@ export default function CostForm() {
                         name="air-Price"
                         id="air-Price"
                         className="w-66 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                     <div>
@@ -111,7 +113,7 @@ export default function CostForm() {
                         name="air-People"
                         id="air-People"
                         className="w-66 lg:w-60 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                   </div>
@@ -137,7 +139,7 @@ export default function CostForm() {
                         name="hotelPrice"
                         id="hotelPrice"
                         className="w-66 lg:w-42 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                     <div>
@@ -150,7 +152,7 @@ export default function CostForm() {
                         name="hotelNights"
                         id="hotelNights"
                         className="w-66 lg:w-40 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                     <div>
@@ -163,7 +165,7 @@ export default function CostForm() {
                         name="roomQuantity"
                         id="RoomQuantity"
                         className="w-66 lg:w-40 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                   </div>
@@ -187,7 +189,7 @@ export default function CostForm() {
                         name="carPrice"
                         id="carPrice"
                         className="w-66 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                     <div>
@@ -200,7 +202,7 @@ export default function CostForm() {
                         name="carDay"
                         id="carDay"
                         className="w-66 lg:w-60 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                   </div>
@@ -238,7 +240,7 @@ export default function CostForm() {
                         name="mealPeople"
                         id="mealPeople"
                         className="w-66 lg:w-40 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                     <div>
@@ -251,7 +253,7 @@ export default function CostForm() {
                         name="mealDays"
                         id="mealDays"
                         className="w-66 lg:w-40 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                   </div>
@@ -275,7 +277,7 @@ export default function CostForm() {
                         name="gasPrice"
                         id="gasPrice"
                         className="w-66 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                     <div>
@@ -288,7 +290,7 @@ export default function CostForm() {
                         name="gasWeeks"
                         id="gasWeeks"
                         className="w-66 lg:w-60 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                   </div>
@@ -302,6 +304,9 @@ export default function CostForm() {
                     Milage
                   </label>
                   <div className="mt-1 sm:mt-0 lg:flex justify-between md:mr-20">
+                    <div className="m-2">
+                      <CountrySelect />
+                    </div>
                     <div>
                       <input
                         onChange={(event) => {
@@ -311,8 +316,8 @@ export default function CostForm() {
                         type="number"
                         name="milage"
                         id="milage"
-                        className="w-66 lg:w-120 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        className="w-66 lg:w-60 h-10 rounded-md m-2 border-2 border-gray-300"
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                   </div>
@@ -336,7 +341,7 @@ export default function CostForm() {
                         name="extra"
                         id="extra"
                         className="w-66 lg:w-120 h-10 rounded-md m-2 border-2 border-gray-300"
-                        style={{textAlign: "center"}}
+                        style={{ textAlign: "center" }}
                       />
                     </div>
                   </div>
@@ -347,7 +352,7 @@ export default function CostForm() {
         </form>
         <div className="flex m-4 p-4 text-center justify-between items-center border-b-2 md:mr-24">
           <div className="items-center text-gray-700 text-lg">
-          <h4>The Estimated Total is </h4>
+            <h4>The Estimated Total is </h4>
           </div>
           <div className="text-3xl font-bold pr-4 text-gray-700">
             <h1> ${estimatedTotal}</h1>
