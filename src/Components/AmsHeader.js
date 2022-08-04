@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import AmsLogo from "../images/image003.jpg"
+import AmsLogo from "../images/AMS-LOGO.png"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -19,6 +19,7 @@ export default function AmsHeader() {
                 className="h-8 w-auto sm:h-10"
                 src={AmsLogo}
                 alt="amsLogo"
+                
               />
             </a>
           </div>
