@@ -23,6 +23,7 @@ export default function CostForm() {
   const laborTotal = useSelector((state) => state.counter.value);
   const mealNumber = useSelector((state) => state.meal.value);
   const milageRate = useSelector((state) => state.milage.value)
+
   let estimatedTotal =
     laborTotal * laborDay +
     airPrice * airPeople +
@@ -33,9 +34,9 @@ export default function CostForm() {
     milageRate* milage +
     extra;
 
-  useEffect(() => {
-    console.log(estimatedTotal);
-  }, [estimatedTotal]);
+  // useEffect(() => {
+
+  // }, [selectedEmployee]);
 
   return (
     <div className="flex justify-center">
@@ -216,7 +217,7 @@ export default function CostForm() {
                     Meal
                   </label>
                   <div className="mt-1 sm:mt-0 lg:flex justify-between lg:mr-20">
-                    <div className="pt-2 pl-2">
+                    <div className="pt-2 pl-2 text-center">
                       {/* <input
                         onChange={(event) => {
                           setMealNumber(event.target.valueAsNumber);
@@ -304,7 +305,7 @@ export default function CostForm() {
                     Milage
                   </label>
                   <div className="mt-1 sm:mt-0 lg:flex justify-between md:mr-20">
-                    <div className="m-2">
+                    <div className="m-2 text-center">
                       <CountrySelect />
                     </div>
                     <div>
@@ -350,11 +351,11 @@ export default function CostForm() {
             </div>
           </div>
         </form>
-        <div className="flex m-4 p-4 text-center justify-between items-center border-b-2 md:mr-24">
+        <div className="lg:flex m-4 p-4 text-center justify-between items-center border-b-2 md:mr-24">
           <div className="items-center text-gray-700 text-lg">
             <h4>The Estimated Total is </h4>
           </div>
-          <div className="text-3xl font-bold pr-4 text-gray-700">
+          <div className="text-4xl lg:text-3xl font-bold pr-4 text-gray-700 ">
             <h1> ${estimatedTotal}</h1>
           </div>
         </div>

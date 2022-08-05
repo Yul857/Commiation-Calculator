@@ -6,12 +6,20 @@ import { incrementByAmount } from "../../features/counter/counterSlice";
 import Select from "react-select";
 
 const laborOptions = [
-  { value: "100", label: "Kevin" },
-  { value: "200", label: "Rob" },
-  { value: "300", label: "Esperanza" },
-  { value: "400", label: "Alberto" },
-  { value: "500", label: "Masao" },
+  { value: "Kevin", label: "Kevin" },
+  { value: "Rob", label: "Rob" },
+  { value: "Esperanza", label: "Esperanza" },
+  { value: "Alberto", label: "Alberto" },
+  { value: "Masao", label: "Masao" },
 ];
+
+let wage = {
+  "Rob":350,
+  "Kevin":420,
+  "Esperanza": 100,
+  "Masao": 200,
+  "Alberto": 200,
+}
 
 const customStyles = {
   container: provided => ({
@@ -21,24 +29,17 @@ const customStyles = {
 };
 
 const EmployeeSelect = () => {
-  const [selectedLabor, setselectedLabor] = useState("");
-  let total = 0
   const dispatch = useDispatch()
   const handleChange = (e) => {
     if (e.length !== 0) {
-      setselectedLabor(e);
+      let laborTotal = 0
+      for (let employees in e){
+        laborTotal += wage[e[employees].value]
+      }
+      dispatch(incrementByAmount(laborTotal))
     }
   };
 
-  useEffect(() => {
-    if (selectedLabor.length!==0){
-        for (let labors in selectedLabor){
-            total += parseInt(selectedLabor[labors].value)
-        }
-        console.log(total)
-        dispatch(incrementByAmount(total))
-    }
-  }, [selectedLabor]);
   return (
     <Select
       onChange={handleChange}
